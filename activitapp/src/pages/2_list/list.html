@@ -1,0 +1,55 @@
+<!--
+  Generated template for the ListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ActivitApp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div>
+      <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+  </div>
+  <div class="right">
+    <div class="ok2">
+      <ion-buttons>
+        <button ion-button color="carbirol" (click)="MapPage()"><ion-icon name="map"></ion-icon></button> 
+      </ion-buttons>
+    </div>
+    <div class="ok2">
+      <ion-buttons>
+        <button ion-button color="carbirol" (click)="HomePage()"><ion-icon name="home"></ion-icon></button>
+      </ion-buttons>
+    </div>
+  </div>
+      <!-- <div *ngIf="{{c.acf.category}} =='Esports'"> -->
+    <div *ngFor="let c of countries | search : terms | sort: {property: column, order: order}" >
+        <ion-list  *ngIf="(this.globals.Esports == 1 && c.acf.category.includes('sport')) 
+          || (this.globals.Musica == 1 && c.acf.category.includes('music'))
+          || (this.globals.Art == 1 && c.acf.category.includes('art')) 
+          || (this.globals.Cuina == 1 && c.acf.category.includes('gastronomy')) 
+          || (this.globals.Nens == 1 && c.acf.category.includes('kids')
+          || (this.globals.Esports == 0 && 
+              this.globals.Musica == 0 && 
+              this.globals.Art == 0 && 
+              this.globals.Cuina == 0 &&
+              this.globals.Nens == 0 ))">
+          <button ion-item (click)="ListClick(c)">
+              <ion-avatar item-left>
+                <img src="{{c.acf.logo.url}}"> 
+              </ion-avatar>
+              <h2>{{c.acf.tittle}}</h2>
+              <p>{{c.acf.startDate}} - {{c.acf.endDate}}</p>
+              <p>{{c.acf.city}}</p>
+          </button>
+        </ion-list>
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,65 @@
+<!--
+  Generated template for the StaticmapPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ActivitApp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<div>
+  <img src="assets/imgs/maparegion.png"  alt="Maparegion" usemap="#mapa" style="position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;">
+  
+  <img *ngIf="this.globals.francia==1" src="assets/imgs/mapafrancia.png"  alt="Maparegion" usemap="#mapa" style="position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;">
+  <img *ngIf="this.globals.girona==1" src="assets/imgs/mapagirona.png"  alt="Maparegion" usemap="#mapa" style="position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;">
+  <img *ngIf="this.globals.lleida==1" src="assets/imgs/mapalleida.png"  alt="Maparegion" usemap="#mapa" style="position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;">
+  <img *ngIf="this.globals.andorra==1" src="assets/imgs/mapaandorra.png"  alt="Maparegion" usemap="#mapa" style="position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;">
+  
+  <!-- para utilizar resto de zonas Barcelona y Tarragona 
+  <img *ngIf="barcelona==1" src="assets/imgs/mapabarcelona.png"  alt="Maparegion" usemap="#mapa" style="position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;">
+  <img *ngIf="tarragona==1" src="assets/imgs/mapatarragona.png"  alt="Maparegion" usemap="#mapa" style="position: absolute; left: 0px; top: 0px; padding: 0px; border: 0px none;">
+  -->
+
+  <map name="mapa" id="map" >
+
+    <area shape="poly" title="Sur-Francia"
+    coords="95,141,95,134,147,108,166,106,184,100,193,97,222,103,247,93,262,94,273,87,280,85,287,90,304,96,288,122,288,175,294,183,286,186,273,182,265,186,253,190,245,195,233,192,217,186,207,184,200,189,189,182,181,178,173,165,154,157,142,157,121,155,114,145" 
+      alt="Francia" (click)="clickFrancia()">
+
+    <area shape="poly" title="Girona"
+    coords="267,276,289,260,299,249,295,233,287,219,292,209,304,209,301,200,291,195,279,190,259,198,254,205,239,205,216,196,204,199,195,199,180,188,184,203,197,205,202,216,203,223,217,223,237,233,239,250,234,257,227,260,243,269,256,268" 
+      alt="Girona" (click)="clickGirona()">
+      
+    <area shape="poly" title="Andorra"
+    coords="154,186,146,183,149,166,161,167,169,174,163,181" 
+      alt="Andorra" (click)="clickAndorra()">
+
+    <area shape="poly" title="Lleida"
+    coords="77,144,99,152,109,154,113,160,131,163,135,171,136,190,147,196,166,191,173,202,163,207,161,217,164,228,153,264,139,265,135,290,121,291,109,298,102,304,89,315,54,320,53,308,61,298,59,289,53,286,70,259,86,200,82,187,87,168,79,159" 
+      alt="Lleida" (click)="clickLleida()">
+
+  <!-- Para conseguir las coords se puede ir a la pag https://www.image-map.net/ 
+        Estas zonas si se quiere añadir más /Barcelona y Tarragona-->
+
+   <!-- <area shape="poly" 
+          coords=" " 
+            alt="barcelona" >
+    
+        <area class="mapatarragona" id="tarragonamap" data-areanum="06" shape="poly" 
+          coords=" " 
+            alt="tarragona" > -->
+  </map>
+</div>
+
+<div class="ok">
+  <img src="assets/imgs/anar.png" class="ok" (click)="homePage()">
+</div>
+
+</ion-content>

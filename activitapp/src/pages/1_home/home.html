@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>ActivitApp</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- Búsqueda por categoría "què?"-->
+  <div *ngIf= "globals.Esports == 0 && globals.Musica == 0 && 
+  globals.Cuina == 0 && globals.Nens  == 0 && globals.Art  == 0 && 
+  globals.Altres == 0" class="container">
+    <img class="img" src="assets/imgs/que.jpg"  (click)="pageCat()" >
+  </div>
+  <div *ngIf= "globals.Esports != 0 || globals.Musica != 0 ||
+  globals.Cuina != 0 || globals.Nens  != 0 || globals.Art  != 0 || 
+  globals.Altres != 0" class="container">
+    <img class="img" src="assets/imgs/queCheck.png"  (click)="pageCat()" >
+  </div>
+
+
+  <!-- Búsqueda por fecha "quan?"-->
+  <div *ngIf="globals.hasta == ''" class="container">
+    <img class="img" src="assets/imgs/quan.jpg"  (click)="pageCal()" >
+  </div>
+  <div *ngIf="globals.hasta != ''" class="container2">
+    <img class="img" src="assets/imgs/quanCheck.png"  (click)="pageCal()" >
+  </div>
+
+  <!-- Búsqueda por región "on?"-->
+  <div *ngIf="this.globals.francia == 0 
+  && this.globals.girona == 0 
+  && this.globals.andorra == 0 
+  && this.globals.lleida == 0" class="container">
+    <img class="img" src="assets/imgs/on.jpg"  (click)="pageSMap()" >
+  </div>
+  <div *ngIf="this.globals.francia == 1 
+  || this.globals.girona == 1 
+  || this.globals.andorra == 1 
+  || this.globals.lleida == 1" class="container">
+    <img class="img" src="assets/imgs/onCheck.png"  (click)="pageSMap()" >
+  </div>
+
+  <div class="center">
+      <!-- <ion-buttons> -->
+        <!-- <button id="descobreix" class="ok2" ion-button (click)="listPage()"></button> -->
+        <img src="../assets/imgs/descobreix.png" (click)="listPage()">
+      <!-- </ion-buttons> -->
+
+  </div>
+</ion-content>
